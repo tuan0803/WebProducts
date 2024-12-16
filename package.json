@@ -1,0 +1,26 @@
+{
+  "name": "product",
+  "version": "1.0.0",
+  "description": "CREATE TABLE products (     product_id INT AUTO_INCREMENT PRIMARY KEY,            -- Mã sản phẩm, khóa chính, tự động tăng     product_name VARCHAR(255) NOT NULL,                    -- Tên sản phẩm     short_description TEXT,                                -- Mô tả ngắn gọn về sản phẩm     full_description TEXT,                                 -- Mô tả chi tiết về sản phẩm     price DECIMAL(10, 2) NOT NULL,                         -- Giá sản phẩm (2 chữ số sau dấu thập phân)     image_url VARCHAR(255),                                -- Đường dẫn tới hình ảnh sản phẩm     weight DECIMAL(10, 2),                                 -- Trọng lượng sản phẩm     dimensions VARCHAR(255),                               -- Kích thước sản phẩm (Ví dụ: chiều dài, chiều rộng, chiều cao)     category_id INT,                                       -- Mã danh mục sản phẩm (liên kết với bảng danh mục)     brand_id INT,                                          -- Mã thương hiệu (liên kết với bảng thương hiệu)     quantity_in_stock INT DEFAULT 0,                       -- Số lượng sản phẩm còn lại trong kho     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,        -- Thời gian tạo sản phẩm     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Thời gian cập nhật thông tin sản phẩm     warranty_info TEXT,                                    -- Thông tin bảo hành sản phẩm     payment_methods VARCHAR(255),                          -- Các phương thức thanh toán (ví dụ: thẻ tín dụng, chuyển khoản, COD)     status ENUM('active', 'inactive', 'out_of_stock') DEFAULT 'active', -- Tình trạng sản phẩm (có thể là hoạt động, không hoạt động, hết hàng)     shipping_info TEXT                                     -- Thông tin vận chuyển (ví dụ: thời gian giao hàng, phương thức vận chuyển) );",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuan0803/WebProducts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuan0803/WebProducts/issues"
+  },
+  "homepage": "https://github.com/tuan0803/WebProducts#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5",
+    "sequelize": "^6.37.5"
+  }
+}
